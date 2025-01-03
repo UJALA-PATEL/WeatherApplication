@@ -1,0 +1,166 @@
+/* Default body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #F3A7D0, #F57C97); /* Default pink theme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+    flex-direction: column;
+    transition: all 0.5s ease;
+}
+
+/* Form styling */
+.input {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.input input[type="text"] {
+    padding: 15px;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    width: 300px;
+    font-size: 16px;
+    outline: none;
+    color: #333;
+    background-color: #fff;
+    transition: 0.3s ease;
+}
+
+.input input[type="text"]:focus {
+    border-color: #FF69B4; /* Pink color focus */
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.8);
+}
+
+.input input[type="submit"] {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    background-color: #FF69B4; /* Pink background */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-left: 15px;
+}
+
+.input input[type="submit"]:hover {
+    background-color: #FF1493; /* Darker pink on hover */
+}
+
+/* Display weather info */
+.display {
+    display: none;
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    text-align: center;
+    transition: all 0.5s ease;
+    transform: scale(0);
+    opacity: 0;
+    animation: cardColorChange 10s infinite; /* Continuous color change */
+}
+
+/* Weather box color change */
+@keyframes cardColorChange {
+    0% {
+        background-color: #9B3D3D; /* Maroon color */
+    }
+    25% {
+        background-color: #FF1493; /* Pink */
+    }
+    50% {
+        background-color: #C71585; /* Medium violet red */
+    }
+    75% {
+        background-color: #FF69B4; /* Hot pink */
+    }
+    100% {
+        background-color: #9B3D3D; /* Maroon color again */
+    }
+}
+
+.weather-info h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.weather-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.weather-info .desc {
+    color: #FFD700;
+    font-weight: 500;
+}
+
+.weather-info .temp, .weather-info .windspeed {
+    color: #E0E0E0;
+}
+
+/* Display active state for the weather info */
+.display.active {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Animations */
+.input, .display {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(to right, #F3A7D0, #F57C97); /* Default pink theme */
+    }
+
+    .input input[type="text"] {
+        width: 250px;
+    }
+
+    .input input[type="submit"] {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+
+    .display {
+        width: 300px;
+    }
+
+    .weather-info h1 {
+        font-size: 30px;
+    }
+
+    .weather-info p {
+        font-size: 16px;
+    }
+}

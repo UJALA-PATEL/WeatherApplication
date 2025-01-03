@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A simple weather application that provides real-time weather information for various cities with a continuously changing colorful theme.">
+    <meta name="keywords" content="weather, city, real-time, forecast, temperature, wind speed, weather app">
+    <meta name="author" content="Ujala Patel">
+    <meta property="og:title" content="Weather App">
+    <meta property="og:description" content="A simple weather application that provides real-time weather information for various cities with a continuously changing colorful theme.">
+    <meta property="og:url" content="URL of your website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@YourTwitterHandle">
+    <meta name="twitter:title" content="Weather App">
+    <meta name="twitter:description" content="A simple weather application that provides real-time weather information for various cities with a continuously changing colorful theme.">
+    <title>Weather App</title>
+</head>
+<body>
+    <form class="input"> 
+        <input type="text" id="inputValue" placeholder="Enter a city" required>
+        <input type="submit" value="Submit">
+    </form>
+    <div class="display">
+        <div class="weather-info">
+            <h1 class="name"></h1>
+            <p class="desc"></p>
+            <p class="temp"></p>
+            <p class="windspeed"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
